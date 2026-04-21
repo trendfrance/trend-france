@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080808" />
+  <title>Case studies — trend.france</title>
+  <meta name="description" content="Les campagnes que trend.france a réalisées pour Audible, Heetch, Center Parcs et d'autres marques. Ce qu'on a créé, pourquoi ça a marché, les chiffres." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23080808'/%3E%3Ctext x='50' y='72' font-family='Space Grotesk,sans-serif' font-weight='700' font-size='64' text-anchor='middle' fill='white'%3Et%3C/text%3E%3Ccircle cx='80' cy='80' r='8' fill='%238B2FC9'/%3E%3C/svg%3E" />
+
+  <style>
+    /* Case study layout spécifique */
+    .case {
+      padding: clamp(60px, 10vh, 120px) 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .case:last-of-type { border-bottom: 0; }
+
+    .case__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .case:nth-child(even) .case__grid { direction: rtl; }
+    .case:nth-child(even) .case__grid > * { direction: ltr; }
+
+    .case__visual {
+      aspect-ratio: 4/5;
+      border-radius: 28px;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .case__visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--gradient);
+      z-index: 0;
+    }
+    .case__visual::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(circle at 25% 25%, rgba(255,255,255,0.25), transparent 55%),
+        radial-gradient(circle at 75% 85%, rgba(0,0,0,0.5), transparent 60%),
+        repeating-linear-gradient(45deg, transparent, transparent 80px, rgba(255,255,255,0.03) 80px, rgba(255,255,255,0.03) 81px);
+    }
+    .case__visual-inner {
+      position: absolute;
+      inset: 0;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      z-index: 2;
+    }
+    .case__tag {
+      display: inline-flex;
+      align-self: flex-start;
+      padding: 8px 16px;
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .case__brandmark {
+      font-family: var(--font-display);
+      font-size: clamp(56px, 8vw, 96px);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      color: rgba(255,255,255,0.92);
+      line-height: 0.95;
+    }
+    .case__brandmark-sub {
+      font-size: 14px;
+      color: rgba(255,255,255,0.75);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-top: 12px;
+      font-weight: 500;
+    }
+
+    .case__title {
+      font-size: clamp(32px, 4vw, 52px);
+      letter-spacing: -0.03em;
+      line-height: 1.05;
+      margin: 20px 0 24px;
+    }
+    .case__summary {
+      color: var(--text-muted);
+      font-size: 17px;
+      line-height: 1.6;
+      margin-bottom: 28px;
+    }
+    .case__meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      padding: 24px 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 28px;
+    }
+    .case__meta-item .v {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      background: linear-gradient(180deg, #fff, #888);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .case__meta-item .l {
+      font-size: 11px;
+      color: var(--text-dim);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+    .case__approach {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .case__chip {
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: var(--bg-2);
+      font-size: 13px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .case__chip::before {
+      content: '';
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--accent);
+    }
+
+    @media (max-width: 900px) {
+      .case__grid { grid-template-columns: 1fr; gap: 32px; }
+      .case:nth-child(even) .case__grid { direction: ltr; }
+      .case__meta { grid-template-columns: 1fr 1fr 1fr; }
+      .case__approach { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a class="nav__logo" href="index.html">trend<span class="dot">.</span></a>
+    <div class="nav__links">
+      <a class="nav__link" href="index.html">Home</a>
+      <a class="nav__link" href="agence.html">Agence</a>
+      <a class="nav__link" href="cases.html">Case studies</a>
+      <a class="nav__link" href="contact.html">Contact</a>
+      <a class="nav__cta" href="contact.html">Prendre RDV</a>
+    </div>
+    <button class="nav__burger" aria-label="Menu"><span></span><span></span></button>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <span class="eyebrow reveal">Case studies</span>
+      <h1 class="reveal">Quand on bosse avec une marque,<br />on ne fait pas du contenu.<br />On crée un moment culturel.</h1>
+      <p class="reveal reveal-delay-1">Trois campagnes, trois approches, trois résultats — voilà ce qu'on a livré pour Audible, Heetch et Center Parcs.</p>
+    </div>
+  </section>
+
+  <!-- AUDIBLE -->
+  <section class="case" id="audible">
+    <div class="container">
+      <div class="case__grid">
+        <div class="case__visual reveal" style="--gradient: linear-gradient(135deg, #F1C761 0%, #B6772B 60%, #1a1a1a 100%);">
+          <div class="case__visual-inner">
+            <span class="case__tag">Campagne publicitaire</span>
+            <div>
+              <div class="case__brandmark">audible</div>
+              <div class="case__brandmark-sub">TikTok · Instagram</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-1">
+          <span class="eyebrow">01 — Audible</span>
+          <h2 class="case__title">Comment Audible a transformé l'écoute de livres audio en expérience culturelle sur TikTok et Instagram.</h2>
+          <p class="case__summary">
+            Audible voulait parler d'un usage — écouter un livre — à une génération qui <em>scroll</em>. On a renversé l'angle : plutôt que vendre la bibliothèque, on a raconté les <strong>moments d'écoute</strong>. Le trajet matinal, la pause clope, le dimanche pluvieux. On a fait d'Audible un objet de lifestyle, pas un service de lecture. Résultat : 3 épisodes du format <em>"Les Meilleurs Moments de…"</em>, une série de Voix Off sur des livres cultes, et une prise de parole organique qui a remis Audible dans les conversations Gen Z.
+          </p>
+
+          <div class="case__meta">
+            <div class="case__meta-item"><span class="v">4,8M</span><span class="l">Reach total</span></div>
+            <div class="case__meta-item"><span class="v">285K</span><span class="l">Engagements</span></div>
+            <div class="case__meta-item"><span class="v">+38%</span><span class="l">Abonnés Audible FR</span></div>
+          </div>
+
+          <div class="case__approach">
+            <div class="case__chip">Storytelling lifestyle</div>
+            <div class="case__chip">3 épisodes signature</div>
+            <div class="case__chip">Série Voix Off</div>
+            <div class="case__chip">4 semaines de run</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HEETCH -->
+  <section class="case" id="heetch">
+    <div class="container">
+      <div class="case__grid">
+        <div class="case__visual reveal" style="--gradient: linear-gradient(135deg, #F7D84C 0%, #D98A2B 60%, #1a0e00 100%);">
+          <div class="case__visual-inner">
+            <span class="case__tag">Collaboration influenceur</span>
+            <div>
+              <div class="case__brandmark">heetch</div>
+              <div class="case__brandmark-sub">Campagne nuit parisienne</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-1">
+          <span class="eyebrow">02 — Heetch</span>
+          <h2 class="case__title">Comment réussir une campagne d'influence percutante pour Heetch.</h2>
+          <p class="case__summary">
+            Heetch est une marque née de la nuit — mais en 2025, sa visibilité Gen Z s'était érodée face à des acteurs plus gros au budget com plus large. On a reconnecté Heetch à sa culture d'origine : la nuit, la ville, les histoires vraies. On a sélectionné <strong>6 créateurs Gen Z</strong> ultra-ancrés Paris / Marseille / Lyon, et on leur a donné carte blanche pour raconter <em>leur</em> Heetch. Zéro brief corporate, 100% authenticité — et un insert trend.france en tête de campagne pour contextualiser.
+          </p>
+
+          <div class="case__meta">
+            <div class="case__meta-item"><span class="v">3,2M</span><span class="l">Impressions</span></div>
+            <div class="case__meta-item"><span class="v">6</span><span class="l">Créateurs activés</span></div>
+            <div class="case__meta-item"><span class="v">x2,4</span><span class="l">Engagement vs. benchmark</span></div>
+          </div>
+
+          <div class="case__approach">
+            <div class="case__chip">Casting créateurs</div>
+            <div class="case__chip">Stratégie micro-territoires</div>
+            <div class="case__chip">Contenu natif</div>
+            <div class="case__chip">Amplification trend</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CENTER PARCS -->
+  <section class="case" id="centerparcs">
+    <div class="container">
+      <div class="case__grid">
+        <div class="case__visual reveal" style="--gradient: linear-gradient(135deg, #3DA96A 0%, #125E38 60%, #03170A 100%);">
+          <div class="case__visual-inner">
+            <span class="case__tag">Création de contenu</span>
+            <div>
+              <div class="case__brandmark">center parcs</div>
+              <div class="case__brandmark-sub">Série TikTok virale</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-1">
+          <span class="eyebrow">03 — Center Parcs</span>
+          <h2 class="case__title">Center Parcs conquiert TikTok : une stratégie virale pour séduire Millennials et Gen Z.</h2>
+          <p class="case__summary">
+            Sur le papier, Center Parcs et la Gen Z n'étaient pas faits pour se rencontrer. Dans la tête du public jeune : un séjour pour familles, pas pour potes. On a renversé l'image. On a produit une <strong>série de 5 vidéos TikTok</strong> sur le format "quand tu pensais que X mais en fait Y" — détournement maîtrisé, ton trend, preuves visuelles du domaine. L'objectif : positionner Center Parcs comme le meilleur plan week-end entre potes. Résultat : 5,6M de vues cumulées, un pic de recherches "Center Parcs entre amis" et +54% d'intent d'achat sur la cible 25–34 ans.
+          </p>
+
+          <div class="case__meta">
+            <div class="case__meta-item"><span class="v">5,6M</span><span class="l">Vues cumulées</span></div>
+            <div class="case__meta-item"><span class="v">5</span><span class="l">Vidéos TikTok</span></div>
+            <div class="case__meta-item"><span class="v">+54%</span><span class="l">Intent 25–34 ans</span></div>
+          </div>
+
+          <div class="case__approach">
+            <div class="case__chip">Repositionnement culturel</div>
+            <div class="case__chip">Série TikTok native</div>
+            <div class="case__chip">Format détournement</div>
+            <div class="case__chip">Mesure intent d'achat</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta reveal">
+    <span class="eyebrow">À toi de jouer</span>
+    <h2>Le prochain case study,<br />c'est le tien ?</h2>
+    <p>Parle-nous du projet — brief, budget, timing. On te revient sous 24h ouvrées avec une première piste.</p>
+    <a href="contact.html" class="btn btn--accent">Prendre RDV <span class="btn__arrow">→</span></a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div>
+        <div class="footer__logo">trend<span class="dot">.</span></div>
+        <p class="footer__blurb">Le média qui explique Internet, avec les codes d'Internet, pour les gens d'Internet.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="agence.html">Agence</a></li>
+          <li><a href="cases.html">Case studies</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Suivre</h4>
+        <ul>
+          <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="#" target="_blank" rel="noopener">TikTok</a></li>
+          <li><a href="#" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:contact@trend-france.fr">contact@trend-france.fr</a></li>
+          <li><a href="tel:+33675203408">+33 6 75 20 34 08</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div>© 2026 trend.france — Tous droits réservés</div>
+      <div>Made with ♥ in Paris</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

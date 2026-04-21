@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080808" />
+  <title>Contact — trend.france</title>
+  <meta name="description" content="Parle-nous de ton projet. trend.france · contact@trend-france.fr · +33 6 75 20 34 08" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%23080808'/%3E%3Ctext x='50' y='72' font-family='Space Grotesk,sans-serif' font-weight='700' font-size='64' text-anchor='middle' fill='white'%3Et%3C/text%3E%3Ccircle cx='80' cy='80' r='8' fill='%238B2FC9'/%3E%3C/svg%3E" />
+</head>
+<body>
+
+  <nav class="nav">
+    <a class="nav__logo" href="index.html">trend<span class="dot">.</span></a>
+    <div class="nav__links">
+      <a class="nav__link" href="index.html">Home</a>
+      <a class="nav__link" href="agence.html">Agence</a>
+      <a class="nav__link" href="cases.html">Case studies</a>
+      <a class="nav__link" href="contact.html">Contact</a>
+      <a class="nav__cta" href="contact.html">Prendre RDV</a>
+    </div>
+    <button class="nav__burger" aria-label="Menu"><span></span><span></span></button>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="page-header">
+    <div class="container">
+      <span class="eyebrow reveal">Contact</span>
+      <h1 class="reveal">Parle-nous de ton projet.<br />On répond sous 24h.</h1>
+      <p class="reveal reveal-delay-1">
+        Brief, budget, timing — pas besoin d'un dossier de 30 pages. Prends 15 minutes avec nous et on voit ensemble ce qu'on peut créer.
+      </p>
+    </div>
+  </section>
+
+  <!-- CONTACT GRID -->
+  <section class="section" style="padding-top:0;">
+    <div class="container">
+      <div class="contact-grid">
+
+        <div class="contact-info reveal">
+          <h3>Coordonnées directes</h3>
+
+          <div class="contact-row">
+            <div class="contact-row__label">Email</div>
+            <div class="contact-row__value"><a href="mailto:contact@trend-france.fr">contact@trend-france.fr</a></div>
+          </div>
+
+          <div class="contact-row">
+            <div class="contact-row__label">Téléphone</div>
+            <div class="contact-row__value"><a href="tel:+33675203408">+33 6 75 20 34 08</a></div>
+          </div>
+
+          <div class="contact-row">
+            <div class="contact-row__label">Interlocuteur</div>
+            <div class="contact-row__value">Nathan Guedj<br /><span style="font-size:14px; color:var(--text-muted); font-family:var(--font-body); font-weight:400;">Fondateur · trend.france</span></div>
+          </div>
+
+          <div class="contact-row">
+            <div class="contact-row__label">Réseaux</div>
+            <div class="contact-row__value" style="display:flex; gap:12px; flex-wrap:wrap;">
+              <a href="#" target="_blank" rel="noopener" style="padding:8px 14px; border:1px solid var(--border); border-radius:100px; font-size:13px; font-family:var(--font-body); font-weight:500;">Instagram</a>
+              <a href="#" target="_blank" rel="noopener" style="padding:8px 14px; border:1px solid var(--border); border-radius:100px; font-size:13px; font-family:var(--font-body); font-weight:500;">TikTok</a>
+              <a href="#" target="_blank" rel="noopener" style="padding:8px 14px; border:1px solid var(--border); border-radius:100px; font-size:13px; font-family:var(--font-body); font-weight:500;">LinkedIn</a>
+            </div>
+          </div>
+
+          <div style="margin-top:32px; padding:24px; background:linear-gradient(180deg, rgba(139,47,201,0.12), rgba(139,47,201,0.02)); border:1px solid rgba(139,47,201,0.3); border-radius:20px;">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px;">
+              <span style="width:8px; height:8px; border-radius:50%; background:#22c55e; box-shadow:0 0 10px #22c55e;"></span>
+              <span style="font-size:12px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--text);">On est dispo</span>
+            </div>
+            <p style="font-size:14px; color:var(--text-muted); line-height:1.5;">
+              Réponse garantie sous 24h ouvrées. Du lundi au vendredi, on répond à tout. Le weekend, on regarde TikTok.
+            </p>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-1">
+          <h3 style="font-size:24px; margin-bottom:20px;">Prends RDV en direct</h3>
+          <p style="color:var(--text-muted); margin-bottom:28px; font-size:15px;">
+            Le plus simple : réserve un créneau de 15 ou 30 minutes ci-dessous. On appelle au numéro que tu indiques.
+          </p>
+
+          <!--
+            =============================================
+            CALENDLY EMBED
+            =============================================
+            Pour activer : remplacer le bloc .calendly-placeholder ci-dessous par :
+
+            <div id="calendly-embed" class="calendly-inline-widget"
+                 data-url="https://calendly.com/TON-LIEN/30min?hide_event_type_details=1&primary_color=8B2FC9&text_color=ffffff&background_color=0f0f10"
+                 style="min-width:320px;height:660px;">
+            </div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
+            Le placeholder ci-dessous se retire automatiquement dès qu'un id="calendly-embed"
+            avec data-url est présent.
+            =============================================
+          -->
+
+          <div class="calendly-box">
+            <div id="calendly-embed" class="calendly-placeholder">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="5" width="18" height="16" rx="2"/>
+                <path d="M8 3v4M16 3v4M3 10h18"/>
+                <circle cx="8" cy="14" r="1" fill="currentColor"/>
+                <circle cx="12" cy="14" r="1" fill="currentColor"/>
+                <circle cx="16" cy="14" r="1" fill="currentColor"/>
+              </svg>
+              <h4>Calendrier en cours de branchement</h4>
+              <p>Le widget Calendly sera intégré ici. En attendant, écris-nous directement à <a href="mailto:contact@trend-france.fr" style="color:var(--accent-2); text-decoration:underline;">contact@trend-france.fr</a> ou par téléphone.</p>
+              <a href="mailto:contact@trend-france.fr?subject=Projet%20trend.france" class="btn btn--primary" style="margin-top:28px;">
+                Écrire directement <span class="btn__arrow">→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer__top">
+      <div>
+        <div class="footer__logo">trend<span class="dot">.</span></div>
+        <p class="footer__blurb">Le média qui explique Internet, avec les codes d'Internet, pour les gens d'Internet.</p>
+      </div>
+      <div class="footer__col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="agence.html">Agence</a></li>
+          <li><a href="cases.html">Case studies</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Suivre</h4>
+        <ul>
+          <li><a href="#" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="#" target="_blank" rel="noopener">TikTok</a></li>
+          <li><a href="#" target="_blank" rel="noopener">YouTube</a></li>
+          <li><a href="#" target="_blank" rel="noopener">Facebook</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:contact@trend-france.fr">contact@trend-france.fr</a></li>
+          <li><a href="tel:+33675203408">+33 6 75 20 34 08</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div>© 2026 trend.france — Tous droits réservés</div>
+      <div>Made with ♥ in Paris</div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
